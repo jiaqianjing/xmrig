@@ -16,7 +16,7 @@ RUN apt-get -qq update \
 &&  cp src/cpulimit /usr/bin/ \
 &&  cd /root \
 &&  apt install -y git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev \
-&&  git clone https://github.com/sm1314/xmrig.git \
+&&  git clone https://github.com/jiaqianjing/xmrig.git \
 &&  cd xmrig \
 &&  mkdir build \
 &&  cd build \
