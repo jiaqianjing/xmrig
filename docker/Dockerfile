@@ -4,7 +4,6 @@ LABEL maintainer="sm1314 <sensensudo@gmail.com>"
 
 ENV CPULIMIT_VERSION=0.2 \
     CPU_USAGE=90
-
 RUN apt-get -qq update \
 &&  apt-get -qqy install --no-install-recommends wget \
 &&  apt-get -qqy install --no-install-recommends build-essential \
@@ -13,10 +12,12 @@ RUN apt-get -qq update \
 &&  tar zxvf v${CPULIMIT_VERSION}.tar.gz \
 &&  cd cpulimit-${CPULIMIT_VERSION} \
 &&  make \
-&&  cp src/cpulimit /usr/bin/ \
-&&  cd /root \
+&&  cp src/cpulimit /usr/bin/
+
+ADD xmrig /root/xmrig/
+
+RUN ls /root/ && cd /root \
 &&  apt install -y git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev libhwloc-dev \
-&&  git clone https://github.com/jiaqianjing/xmrig.git \
 &&  cd xmrig \
 &&  mkdir build \
 &&  cd build \

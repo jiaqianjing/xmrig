@@ -1,1 +1,1 @@
-docker build -t king/miner:v1 .
+docker build -t neurons/miner:v1 .
